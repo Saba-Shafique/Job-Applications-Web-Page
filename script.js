@@ -2,7 +2,6 @@ window.onload = initAll
 var submitted = false;
 
 function initAll() {
-    console.log("inside init")
     submitted = false;
     document.getElementById("jobApplication").addEventListener("submit", saveAllInfo, false); //add eventlistner when submitt so that data can be saved 
 }
@@ -11,7 +10,6 @@ const dataArray = {};
     
 function saveAllInfo(event)
 {
-    console.log("info saving")
     event.preventDefault(); // Prevent the default form submission behavior
 
     const formElements= document.getElementById('jobApplication').elements;
@@ -21,7 +19,6 @@ function saveAllInfo(event)
             dataArray[element.id || element.name] = element.value;
         }
     }
-    console.log('Form Data:', dataArray);
     submitted = true; // to check either we have data to convert it in table or not 
 }
 
@@ -34,7 +31,6 @@ function tableConverter(){
     }
     let form = document.getElementById("jobApplication");
     let div = document.getElementById("tableContainer");
-    console.log(data)
 
     if(div.childNodes.length == 0) // if table doesn't exists
     {
