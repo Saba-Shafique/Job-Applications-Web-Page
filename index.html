@@ -1,12 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Applications</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Job Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
 </head>
+
 <body>
-    <h1>JOB APPLICATION WEB PAGE!</h1>
+    <div class="mainContianer">
+        <form id="jobApplication">
+            <h2 class="heading">Job Application Form</h2>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="holder">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" maxlength="20" required>
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" maxlength="20" required>
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" minlength="11" maxlength="11"
+                        pattern="^03\d{2}\d{7}$" placeholder="03XX-XXXXXXX" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" minlength="12" maxlength="30" placeholder="xyz@mail.com"
+                        required>
+                    <label for="street">Street</label>
+                    <input type="text" name="street" id="street" minlength="5" maxlength="30" max="1000" required>
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" minlength="5" maxlength="30" required>
+                    <label for="state">State</label>
+                    <input type="text" name="state" id="state" minlength="4" maxlength="30" required>
+                    <label for="zip">Zip Code</label>
+                    <input type="text" name="zip" id="zip" placeholder="XXXXX" minlength="4" maxlength="5"
+                        pattern="[0-9]{5}">
+                </div>
+            </fieldset>
+            <div>
+                <fieldset>
+                    <legend>Resume and Cover Letter</legend>
+                    <div class="holder">
+                        <label for="resume">Upload Resume</label>
+                        <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx" required>
+                        <label for="coverLetter">Cover Letter</label>
+                        <textarea required name="coverLetter" maxlength="300" placeholder="Cover Letter"
+                            id="coverLetter" rows="5"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Education</legend>
+                    <div class="holder">
+                        <label for="education">Highest Level of Education Attained</label>
+                        <select name="education" id="education" name="education" required>
+                            <option value="primary">Primary School</option>
+                            <option value="secondary">Secondary School</option>
+                            <option value="bachelors">Bachelor's Degree</option>
+                            <option value="masters">Master's Degree</option>
+                        </select>
+                        <label for="schoolName">Name of School/University</label>
+                        <input type="text" minlength="4" maxlength="30" name="schoolName" id="schoolName" required>
+                        <label for="major">Major/Area of Study</label>
+                        <input type="text" minlength="4" maxlength="30" name="major" id="major" required>
+                        <label for="graduationYear">Graduation Year</label>
+                        <input type="text" name="graduationYear" id="graduationYear" value="2024" min="1990" max="2024"
+                            pattern="[0-9]{4}" required>
+                        <label for="employeeHistory"> Employment History</label>
+                        <textarea required name="employeeHistory" maxlength="300"
+                            placeholder="Please list employment history here" id="employeeHistory" rows="5"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Previous Job Titles</legend>
+                    <div class="holder">
+                        <label for="companyNames">Previous Company Names</label>
+                        <input type="text" minlength="4" maxlength="50" placeholder="company1 , compnay2"
+                            id="companyNames" name="companyNames" required>
+                        <label for="empdates">Employment Dates</label>
+                        <input type="date" required id="empdates" name="empdates" placeholder="Employment dates"
+                            max="2024-01-01">
+                        <br>
+                        <label for="jobresp">Job Responsibilities</label>
+                        <textarea required name="jobresp" maxlength="150"
+                            placeholder="Please list job responsibilites here" id="jobresp" rows="5"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Skills</legend>
+                    <div class="holder">
+                        <label for="skills">Relevant Skills</label>
+                        <input type="text" placeholder="language frameworks(java,spring etc)" minlength="4"
+                            maxlength="30" name="skills" id="skills" required>
+                        <label for="certifications">Upload Certifications</label>
+                        <input type="file" name="certifications" id="certifications" required>
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Availability</legend>
+                    <div class="holder">
+                        <label for="startdate">Start Date</label>
+                        <input type="date" required id="startdate" name="startdate" placeholder="Enter Start date"
+                            min="2024-03-05" max="2024-05-05">
+                        <label for="workschedule">Preferred Work Schedule</label>
+                        <select id="workschedule" name="workschedule" required>
+                            <option value="morning">9:00 AM - 5:00 PM</option>
+                            <option value="night">9:00 PM - 5:00 AM</option>
+                        </select>
+                        <label for="relocate">Are you willing to relocate ?</label>
+                        <select id="relocate" name="relocate" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>References</legend>
+                    <div class="holder">
+                        <label for="referenceName">Reference Name</label>
+                        <input type="text" minlength="4" maxlength="30" name="referenceName" id="referenceName"
+                            required>
+                        <label for="referenceContact">Reference Contact Information</label>
+                        <input type="tel" name="referenceContact" id="referenceContact" minlength="11" maxlength="11"
+                            pattern="^03\d{2}\d{7}$" placeholder="03XX-XXXXXXX" required>
+                        <label for="relationship">Relationship to Applicant</label>
+                        <input type="text" minlength="4" maxlength="30" name="relationship" id="relationship" required>
+                    </div>
+                </fieldset>
+            </div>
+            <diV>
+                <fieldset>
+                    <legend>Additional Questions</legend>
+                    <div class="holder">
+                        <label for="question">Why do you want to work for this company?</label>
+                        <textarea id="question" name="question" cols="30" rows="5"></textarea>
+                    </div>
+                </fieldset>
+            </diV>
+            <div>
+                <h3 class="boxHeading">Consent and Agreement</h3>
+                <label for="agreement"><input type="checkbox" name="agreement" id="agreement" value="agree" required>By
+                    checking i agree with privacy
+                    policy and company conditions</label>
+            </div>
+            <div>
+                <button id="button" type="submit">Submit Application</button>
+            </div>
+        </form>
+    </div>
+    <div id="buttonContainer">
+        <button id="button" onclick="tableConverter()">View as Table</button>
+    </div>
+    <div id="tableContainer"></div>
+
 </body>
+
+
 </html>
